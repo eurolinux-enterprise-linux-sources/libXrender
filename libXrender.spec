@@ -4,8 +4,8 @@
 
 Summary: X.Org X11 libXrender runtime library
 Name: libXrender
-Version: 0.9.8
-Release: 2.1%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}.1
+Version: 0.9.10
+Release: 1%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License: MIT
 Group: System Environment/Libraries
 URL: http://www.x.org
@@ -17,8 +17,6 @@ Source2:    commitid
 %else
 Source0: http://xorg.freedesktop.org/archive/individual/lib/%{name}-%{version}.tar.bz2
 %endif
-
-Patch0:     Fix-request-length-calculation.patch
 
 Requires: libX11 >= 1.5.99.902
 
@@ -40,7 +38,6 @@ X.Org X11 libXrender development package
 
 %prep
 %setup -q -n %{tarball}-%{?gitdate:%{gitdate}}%{!?gitdate:%{version}}
-%patch0 -p1
 
 %build
 autoreconf -v --install --force
@@ -77,9 +74,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/xrender.pc
 
 %changelog
-* Wed Apr 27 2016 Benjamin Tissoires <benjamin.tissoires@redhat.com> 0.9.8-2.1.el6.1
+* Wed Oct 05 2016 Benjamin Tissoires <benjamin.tissoires@redhat.com> 0.9.10-1
+- libXrender 0.9.10
+- fixes CVE-2016-7949, CVE-2016-7950 (#1406212)
+
+* Mon Apr 25 2016 Benjamin Tissoires <benjamin.tissoires@redhat.com> 0.9.8-3
 - Fix request length calculation for XRenderCompositeText32
-  (#1330653)
+  (#1328578)
 
 * Wed Feb 12 2014 Adam Jackson <ajax@redhat.com> 0.9.8-2.1
 - Mass rebuild
