@@ -1,11 +1,10 @@
 Summary: X.Org X11 libXrender runtime library
 Name: libXrender
-Version: 0.9.5
-Release: 1%{?dist}
+Version: 0.9.7
+Release: 2%{?dist}
 License: MIT
 Group: System Environment/Libraries
 URL: http://www.x.org
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Source0: ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
 
@@ -19,10 +18,6 @@ X.Org X11 libXrender runtime library
 Summary: X.Org X11 libXrender development package
 Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
-
-# needed by xrender.pc
-Requires: xorg-x11-proto-devel
-Requires: libX11-devel
 
 %description devel
 X.Org X11 libXrender development package
@@ -64,6 +59,21 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/xrender.pc
 
 %changelog
+* Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.7-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+
+* Thu Mar 08 2012 Adam Jackson <ajax@redhat.com> 0.9.7-1
+- libXrender 0.9.7
+
+* Fri Jan 13 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.6-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
+* Mon Feb 07 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.6-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
+* Wed Jun 09 2010 Peter Hutterer <peter.hutterer@redhat.com> 0.9.6-1
+- libXrender 0.9.6
+
 * Tue Oct 06 2009 Adam Jackson <ajax@redhat.com> 0.9.5-1
 - libXrender 0.9.5
 
