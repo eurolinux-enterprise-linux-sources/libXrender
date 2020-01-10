@@ -5,7 +5,7 @@
 Summary: X.Org X11 libXrender runtime library
 Name: libXrender
 Version: 0.9.8
-Release: 1%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Release: 2.1%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License: MIT
 Group: System Environment/Libraries
 URL: http://www.x.org
@@ -74,6 +74,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/xrender.pc
 
 %changelog
+* Wed Feb 12 2014 Adam Jackson <ajax@redhat.com> 0.9.8-2.1
+- Mass rebuild
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.9.8-2
+- Mass rebuild 2013-12-27
+
 * Mon Jul 08 2013 Peter Hutterer <peter.hutterer@redhat.com> 0.9.8-1
 - libXrender 0.9.8
 
